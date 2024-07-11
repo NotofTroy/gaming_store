@@ -23,14 +23,14 @@ public class Product {
 	
 	@NotBlank(message = "O atributo nome é obrigatório.")
 	@Size(min = 5, max = 100, message = "O atributo titulo nome conter no mínimo 05 e no máximo 100 caracteres")
-	private String nome;
+	private String name;
 	
 	@NotBlank(message = "O atributo descrição é obrigatório!")
 	@Size(min = 5, max = 100, message = "O atributo descrição deve conter no mínimo 10 e no máximo 1000 caracteres")
-	private String descricao;
+	private String description;
 	
 	@NotBlank(message = "O atributo preço é obrigatório!")
-	private BigDecimal preco;
+	private BigDecimal price;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("product")
@@ -44,28 +44,36 @@ public class Product {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	
-	public BigDecimal getPreco() {
-		return preco;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public void setPreco(BigDecimal preco) {
-		this.preco = preco;
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	
 }
