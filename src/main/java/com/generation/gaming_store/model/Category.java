@@ -1,7 +1,5 @@
 package com.generation.gaming_store.model;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,8 +9,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "product")
-public class Product {
+@Table(name = "product_category")
+public class Category {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,9 +23,6 @@ public class Product {
 	@NotBlank(message = "O atributo descrição é obrigatório!")
 	@Size(min = 5, max = 100, message = "O atributo descrição deve conter no mínimo 10 e no máximo 1000 caracteres")
 	private String descricao;
-	
-	@NotBlank(message = "O atributo preço é obrigatório!")
-	private BigDecimal preco;
 
 	public Long getId() {
 		return id;
@@ -53,12 +48,6 @@ public class Product {
 		this.descricao = descricao;
 	}
 	
-	public BigDecimal getPreco() {
-		return preco;
-	}
 
-	public void setPreco(BigDecimal preco) {
-		this.preco = preco;
-	}
 	
 }
