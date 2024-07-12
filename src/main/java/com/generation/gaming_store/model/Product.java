@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -22,14 +23,14 @@ public class Product {
 	private Long id;
 	
 	@NotBlank(message = "O atributo nome é obrigatório.")
-	@Size(min = 5, max = 100, message = "O atributo titulo nome conter no mínimo 05 e no máximo 100 caracteres")
+	@Size(min = 5, max = 100, message = "O atributo nome deve conter no mínimo 05 e no máximo 100 caracteres")
 	private String name;
 	
 	@NotBlank(message = "O atributo descrição é obrigatório!")
 	@Size(min = 5, max = 100, message = "O atributo descrição deve conter no mínimo 10 e no máximo 1000 caracteres")
 	private String description;
 	
-	@NotBlank(message = "O atributo preço é obrigatório!")
+	@NotNull(message = "O atributo preço é obrigatório!")
 	private BigDecimal price;
 	
 	@ManyToOne
